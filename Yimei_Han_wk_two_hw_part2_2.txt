@@ -1,0 +1,201 @@
+1.
+const addNums = () => {
+    let num1 = document.getElementById("num1").value;
+    let num2 = document.getElementById("num2").value;
+    let sum = parseInt(num1, 10) + parseInt(num2, 10);
+    document.getElementById("result").innerHTML = sum;
+};
+
+      
+
+<div class="form">    
+          <fieldset>
+              <label>Number 1</label>
+              <input type="text" id="num1">
+          </fieldset>
+      
+          <fieldset>
+              <label>Number 2</label>
+              <input type="text" id="num2">
+          </fieldset>
+      
+          <fieldset>
+              <button id="add" onclick="addNums()">Click to Add</button>
+              <h3>Result</h3>
+              <span id="result">Result here</span>
+          </fieldset>    
+</div>
+
+
+
+.form{
+    margin: 30px;
+    border: 1px solid orange;
+    border-radius: 10px;
+    padding:10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+fieldset { 
+    border:0px;
+}
+input{
+    text-align: center;
+    padding:3px;
+}
+button{
+    background-color:orange;
+    border: none;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+JavaScript
+Anonymous arrow function
+
+const: it creates a read-only reference to the value. It means that the variable identifier cannot be reassigned. The value can change, just the structure of the value cannot.
+
+addNums(): define a function with the function keyword called addNums()and placed a block of code between {}. The code between the {} is the code that the function executes.
+
+=>: arrow function. The left part denotes the input of a function and the right part the output of that function.
+
+let: declares a block scope local variable, optionally(immediately) initializing it to a value.
+
+getElementById: gets the element with the specified ID and returns the element that has the id attribute with the specified value.
+
+.value: refers to the value attribute inherent in the input.tag.
+
+parseInt(): parses a string and returns an integer with a specified radix. 
+parseInt(string, radix)
+string: value to parse.
+radix: It’s an integer between 2 and 36 which represents the radix, the base in mathematical numerical systems of the string. 
+
+parseInt(num1, 10) + parseInt(num2, 10): additional operator.
+
+innerHTML: change the content of the innerHTML of the span element from “Result here” to the total sum of the addNums function.
+
+
+HTML
+<fieldset>: group related elements in a form. Draws a box around the related elements.
+<input>: specifies an input field where the user can enter data.
+<span>: provides a way to add a hook to a part of a text or part of a document.
+
+
+CSS
+fieldset: get rid of the default border.
+.form: change the font in the form block element. Give a styled border to the form.
+input: center the entered date.
+button: change the style of the default button.
+
+
+2.
+default: not passed. It’s token that has special meaning in JavaScript.
+5days: not passed. variable names must begin with a letter, an underscore or a dollar sign.
+ლ_ಠ益ಠ_ლ: passed.
+
+
+3.
+Declare and initialize a variable with var. Then re-assign the variable to another value.
+
+var age = 23; 
+console.log(age);
+23
+undefined
+The variable age equals to 23. The printed message 23 displayed to the user.
+
+var x = 5 + 10 + 2;
+console.log(x);
+17
+undefined
+Variables in JavaScript can evaluate simple mathematical expressions and assume its value.
+
+
+Declare and initialize a variable with let. Then re-assign the variable to another value.
+
+let y = 3; 
+console.log(y);
+3
+undefined
+The variable y equals to 3. The printed message 3 displayed to the user.
+
+let pet= 'cat'; 
+console.log(pet);
+cat
+undefined
+The variable pet equals to cat. The printed message cat displayed to the user.
+
+
+Declare and initialize a variable with const. Then re-assign the variable to another value.
+const person = {};
+person.name = 'chris';
+"chris"
+It’s not allowed to change the value of a variable declared with const. But if I declare an object as const, I am able to change the properties.
+
+const color='red'; 
+console.log(color);
+red
+undefined
+The variable color equals to red. The printed message red displayed to the user.
+
+
+4.
+Variables defined outside a function are called global variables.
+Variables defined within a function are local variables.
+
+Var are global scope:
+var cats =2;
+
+function myCats( ) {
+	if (cats < 5) {
+		console.log(‘I have ${cats} cats’);
+	}
+	else{
+		console.log(“That’s a lot of cats!”);
+	}
+}
+
+console.log(cats); 
+
+myCats( );
+
+Let are local scope:
+function myCats( ) {
+	let cats = 4
+	if (cats < 5) {
+		console.log(‘I have ${cats} cats’);
+	}
+	else{
+		console.log(“That’s a lot of cats!”);
+	}
+}
+
+console.log(cats); 
+
+myCats( );
+
+Const can be global or local to the function in which it is declared. Once a variable has been declared using const it cannot be re-declared or re-assigned.
+const cats = 2;
+
+const obj = {
+	cat: “black”
+}  ;
+obj.cat = “purple”;
+console. log(obj.cat);
+
+
+let block scope example:
+let x = 10;
+if (x == 10) {
+    let x = 20;
+    console.log(x); //20:  reference x inside the block
+}
+console.log(x); // 10: reference at the beginning of the script
+
+
